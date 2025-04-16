@@ -7,12 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.abc.entities.Post;
 import com.abc.entities.User;
 import com.abc.services.PostService;
-import com.abc.services.UserService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -20,12 +18,10 @@ import jakarta.servlet.http.HttpSession;
 public class UserController {
     
     private PostService postService;
-    private UserService userService;
     
     @Autowired
-    public UserController(PostService postService,UserService userService) {
+    public UserController(PostService postService) {
 		this.postService = postService;
-		this.userService = userService;
 	}
 	@GetMapping("/profile")
 	public String profileUser(Model model,HttpSession session) {
@@ -45,6 +41,4 @@ public class UserController {
 		return "profile";
 		
 	}
-	
-	
 }

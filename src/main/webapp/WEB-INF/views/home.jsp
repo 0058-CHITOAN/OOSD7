@@ -25,7 +25,7 @@ if (user == null)
 		</div>
 
 		<div class="navbar-nav ms-auto d-flex align-items-center">
-			<a href="profile"> <span class="text-white me-3">👤 Hồ sơ
+			<a href="${pageContext.request.contextPath}/profile/"> <span class="text-white me-3">👤 Hồ sơ
 					của bạn</span> <img
 				src="${pageContext.request.contextPath}/resources/images/avt.jpg"
 				alt="Avatar" class="rounded-circle" width="40">
@@ -41,7 +41,7 @@ if (user == null)
             		<div style="display: flex; flex-direction: row;">
             			<form action="${pageContext.request.contextPath}/">
 	            			<input placeholder="Nhập username cần tìm..." name="search-keyword" value="" style=""/>
-	            			<button>Tìm kiếm</button>
+	            			<button>Tìm</button>
 	            		</form>
             		</div>
             		
@@ -52,7 +52,7 @@ if (user == null)
             					List<User> searchResult = (List<User>) request.getAttribute("searchResult");
                 				if (searchResult.size() == 0) {
             					%>
-            						<img src="${pageContext.request.contextPath}/resources/images/404-not-found-la-gi-1.jpg" alt="Not found." style="width: 100%;" />
+            						<img src="${pageContext.request.contextPath}/resources/images/3-1-300x156.jpg" alt="Not found." style="width: 100%;" />
             					<%
                 				} else {
                 					for (var t : searchResult) {
@@ -230,3 +230,6 @@ document.querySelectorAll('.unfollow-btn').forEach(button => {
 });
 </script>
 </html>
+
+
+
